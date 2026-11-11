@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Nose to 100">
+<meta name="theme-color" content="#0e1013">
+<title>Nose to 100</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<style>
+:root{
+  --bg:#0e1013; --card:#171a1f; --card2:#1d2128; --line:#262a31;
+  --ink:#f3f4f6; --ink2:#a3a9b3; --muted:#6b7280;
+  --accent:#ff7a1a; --accent-ink:#1a0d03;
+  --good:#3fbf6f; --warn:#f2b33d; --bad:#ef5a5a; --blue:#5aa9ff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
+body{min-height:100vh;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+.screen{display:none;max-width:520px;margin:0 auto;padding:18px 16px 40px}
+.screen.on{display:block}
+h1{font-size:22px;font-weight:800;letter-spacing:-.01em}
+h1 b{color:var(--accent)}
+h2{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin:26px 0 10px}
+p{color:var(--ink2)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;margin-top:16px}
+.badge{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--card2)}
+.b-train{color:var(--accent)} .b-recovery{color:var(--blue)} .b-test{color:var(--warn)} .b-rest{color:var(--ink2)} .b-done{color:var(--good)}
+.hero{font-size:76px;font-weight:900;line-height:1;margin:12px 0 4px;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.hero small{font-size:20px;font-weight:700;color:var(--ink2);letter-spacing:0;margin-left:6px}
+.sets{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 4px}
+.sets span{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:4px 10px;font-weight:700;font-variant-numeric:tabular-nums}
+.btn{display:block;width:100%;border:0;border-radius:14px;padding:16px;font-size:18px;font-weight:800;cursor:pointer;margin-top:16px;font-family:inherit}
+.btn-main{background:var(--accent);color:var(--accent-ink)}
+.btn-ghost{background:var(--card2);color:var(--ink);border:1px solid var(--line)}
+.btn:active{transform:scale(.98)}
+.muted{color:var(--muted);font-size:14px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.tile .k{font-size:12px;color:var(--ink2);font-weight:600}
+.tile .v{font-size:24px;font-weight:800;font-variant-numeric:tabular-nums;margin-top:2px}
+.steps{list-style:none;margin-top:10px;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:8px 0 8px 38px;color:var(--ink2)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:7px;width:26px;height:26px;border-radius:50%;background:var(--card2);color:var(--accent);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px}
+.steps li b{color:var(--ink)}
+.warnbox{background:#2a1f10;border:1px solid #4a3417;border-radius:14px;padding:12px 14px;margin-top:14px;color:#f5d6a8;font-size:15px}
+.row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.switch{width:52px;height:30px;border-radius:999px;background:var(--line);position:relative;border:0;cursor:pointer}
+.switch::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:left .15s}
+.switch.on{background:var(--accent)} .switch.on::after{left:25px}
+.link{background:none;border:0;color:var(--ink2);font:inherit;font-weight:700;text-decoration:underline;cursor:pointer;padding:0}
+.danger{color:var(--bad)}
+/* chart */
+.chartwrap{position:relative;margin-top:8px}
+.chartwrap svg{display:block;width:100%;height:auto}
+.tip{position:absolute;top:-6px;left:0;transform:translate(-50%,-100%);background:#2b3038;color:var(--ink);border:1px solid #3a404a;padding:6px 10px;border-radius:10px;font-size:13px;font-weight:600;white-space:nowrap;pointer-events:none;display:none;box-shadow:0 6px 18px rgba(0,0,0,.4)}
+.legend{display:flex;gap:14px;font-size:12px;color:var(--ink2);margin-top:6px}
+.legend i{display:inline-block;vertical-align:middle;margin-right:5px}
+/* session */
+#s-session{position:fixed;inset:0;max-width:none;padding:0;touch-action:none;background:var(--bg);overflow:hidden}
+#s-session.on{display:flex;flex-direction:column}
+.sbar{display:flex;justify-content:space-between;align-items:center;padding:calc(env(safe-area-inset-top) + 12px) 14px 10px;gap:10px}
+.hold{position:relative;overflow:hidden;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:10px 14px;font:700 14px/1 inherit;font-family:inherit;touch-action:none}
+.hold .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(255,122,26,.35);transition:none}
+.hold.holding .fill{width:100%;transition:width .8s linear}
+.hold span{position:relative}
+.slabel{font-weight:800;color:var(--ink2);font-size:15px;text-align:center;flex:1}
+.scenter{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px;pointer-events:none}
+.bignum{font-size:min(44vw,240px);font-weight:900;line-height:.95;letter-spacing:-.04em;font-variant-numeric:tabular-nums;transition:transform .08s}
+.bignum.pop{transform:scale(1.06)}
+.ofline{font-size:22px;font-weight:700;color:var(--ink2);margin-top:6px}
+.status{min-height:52px;margin-top:16px;font-size:18px;font-weight:700;color:var(--warn)}
+.dots{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:0 20px 14px;pointer-events:none}
+.dots div{height:8px;width:26px;border-radius:4px;background:var(--line);overflow:hidden}
+.dots div i{display:block;height:100%;background:var(--accent)}
+.sfoot{text-align:center;color:var(--muted);font-size:13px;padding:0 20px calc(env(safe-area-inset-bottom) + 14px);pointer-events:none}
+.restov{display:none;font-size:20px;font-weight:800;color:var(--blue)}
+.restov .rt{font-size:min(30vw,170px);font-weight:900;line-height:1;font-variant-numeric:tabular-nums;color:var(--blue);display:block}
+.resting .bignum,.resting .ofline{display:none}
+.resting .restov{display:block}
+.feel{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px}
+.feel button{border:1px solid var(--line);background:var(--card2);color:var(--ink);border-radius:14px;padding:16px 6px;font:800 16px/1.2 inherit;font-family:inherit;cursor:pointer}
+.feel button small{display:block;font-size:11px;font-weight:600;color:var(--ink2);margin-top:4px}
+.stat-lines{margin-top:12px}
+.stat-lines div{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-size:15px}
+.stat-lines div:last-child{border-bottom:0}
+.stat-lines b{font-variant-numeric:tabular-nums}
+.ok{color:var(--good)} .notok{color:var(--warn)}
+</style>
+</head>
+<body>
+
+<section id="s-intro" class="screen"></section>
+<section id="s-home" class="screen"></section>
+<section id="s-ready" class="screen"></section>
+<section id="s-result" class="screen"></section>
+
+<section id="s-session" class="screen">
+  <div class="sbar">
+    <button class="hold" id="h-undo"><div class="fill"></div><span>Hold: −1</span></button>
+    <div class="slabel" id="slabel">Set 1 of 4</div>
+    <button class="hold" id="h-end"><div class="fill"></div><span>Hold: finish</span></button>
+  </div>
+  <div class="scenter" id="scenter">
+    <div class="bignum" id="bignum">0</div>
+    <div class="ofline" id="ofline">of 10</div>
+    <div class="restov" id="restov">Rest<span class="rt" id="rt">60</span><span id="restnext" style="font-size:16px;color:var(--ink2);font-weight:600"></span></div>
+    <div class="status" id="status"></div>
+  </div>
+  <div class="dots" id="dots"></div>
+  <div class="sfoot" id="sfoot">Nose to the screen = 1 rep</div>
+</section>
+
+<script>
+// LOGIC START
+const BREAK_MS = 5000;      // a pause longer than this mid-set = an unplanned break
+const MIN_REP_MS = 350;     // ignore touches closer together than this (double contact)
+const TEST_END_MS = 7000;   // max test ends after this long with no rep
+const AUTO_FINISH_MS = 10000;
+const PATTERN = ['train','train','train','recovery','train','train','rest'];
+
+function defaults(){
+  return {startDate:null, target:null, estMax:null, lastTestMax:null, p:0.02,
+          sessions:[], recoveryDays:[], hardStreak:0, voice:true, reached100:null, pending:null};
+}
+const pad = n => String(n).padStart(2,'0');
+const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
+function dateStr(d){ return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+function todayStr(){ return dateStr(new Date()); }
+function parseD(s){ const [y,m,d] = s.split('-').map(Number); return Date.UTC(y, m-1, d); }
+function dayDiff(a,b){ return Math.round((parseD(b)-parseD(a))/864e5); }
+function addDays(s,n){ const t = new Date(parseD(s)+n*864e5); return t.getUTCFullYear()+'-'+pad(t.getUTCMonth()+1)+'-'+pad(t.getUTCDate()); }
+
+function sessionOn(S,d){ return S.sessions.find(s => s.date === d); }
+
+function dayType(S,d){
+  if(!S.startDate) return 'test';
+  const i = dayDiff(S.startDate, d);
+  if(i === 0) return 'test';
+  if(S.recoveryDays.includes(d)) return 'recovery';
+  if(i > 0 && i % 14 === 0) return 'test';
+  return PATTERN[((i % 7) + 7) % 7];
+}
+
+// training days skipped since the last session (before today)
+function missedDays(S,today){
+  if(!S.startDate) return 0;
+  const last = S.sessions.length ? S.sessions[S.sessions.length-1].date : S.startDate;
+  let m = 0;
+  for(let d = addDays(last,1); dayDiff(d,today) > 0; d = addDays(d,1)){
+    if(dayType(S,d) !== 'rest' && !sessionOn(S,d)) m++;
+  }
+  return m;
+}
+// target is kept as a decimal so small daily gains add up; rounded only for display
+function effectiveTarget(S,today){
+  const m = missedDays(S,today);
+  let t = S.target;
+  if(m >= 3) t *= 0.85; else if(m === 2) t *= 0.93;
+  return Math.max(5, t);
+}
+function setSizeFor(S){ return clamp(Math.round(0.6*(S.estMax||5)), 3, 50); }
+
+function makePlan(S,date,opts){
+  const decay = !opts || opts.decay !== false;
+  const type = dayType(S,date);
+  if(type === 'rest') return {type, date};
+  if(type === 'test') return {type, date, sets:[Infinity], total:null, base:S.target, rest:0};
+  const base = decay ? effectiveTarget(S,date) : S.target;
+  const total = type === 'recovery' ? Math.max(5, Math.round(base*0.6)) : Math.round(base);
+  const size = setSizeFor(S);
+  const n = Math.ceil(total/size), b = Math.floor(total/n), r = total - b*n;
+  const sets = Array.from({length:n}, (_,i) => b + (i < r ? 1 : 0));
+  return {type, date, sets, total, base, rest: size >= 20 ? 90 : 60};
+}
+
+// Rebuild the whole session state from rep timestamps (makes undo trivial)
+function replay(plan,times){
+  const sets = plan.sets;
+  let setIdx = 0, inSet = 0, breaks = 0, run = 0, maxRun = 0, bonus = 0;
+  const setTimes = sets.map(() => []);
+  for(let i = 0; i < times.length; i++){
+    const gap = i ? times[i]-times[i-1] : 0;
+    if(i && gap > BREAK_MS){ if(inSet > 0 && setIdx < sets.length) breaks++; run = 0; }
+    run++; maxRun = Math.max(maxRun, run);
+    if(setIdx < sets.length){
+      inSet++; setTimes[setIdx].push(times[i]);
+      if(inSet === sets[setIdx]){ setIdx++; inSet = 0; }
+    } else bonus++;
+  }
+  return {total:times.length, setIdx, inSet, breaks, maxRun, setTimes, bonus, done: setIdx >= sets.length};
+}
+
+// How much slower the last 3 reps of a set were vs the first 3 (0.5 = 50% slower)
+function slowdownOf(setTimes){
+  let worst = 0;
+  for(const ts of setTimes){
+    const iv = [];
+    for(let i = 1; i < ts.length; i++){ const g = ts[i]-ts[i-1]; if(g <= BREAK_MS) iv.push(g); }
+    if(iv.length < 6) continue;
+    const a = (iv[0]+iv[1]+iv[2])/3, z = (iv[iv.length-1]+iv[iv.length-2]+iv[iv.length-3])/3;
+    worst = Math.max(worst, z/a - 1);
+  }
+  return Math.max(0, worst);
+}
+
+function addRecovery(S,d){ if(dayType(S,d) === 'train' && !S.recoveryDays.includes(d)) S.recoveryDays.push(d); }
+
+// The brain: update the plan after a session
+function applySession(S,plan,res){
+  const d = plan.date, tomorrow = addDays(d,1);
+  const rec = {date:d, type:plan.type, target:plan.total, reps:res.reps, sets:plan.type==='test'?1:plan.sets.length,
+               breaks:res.breaks, slowdown:Math.round(res.slowdown*100)/100, feel:res.feel||null, maxRun:res.maxRun,
+               completed: plan.type === 'test' ? true : res.reps >= plan.total};
+  const before = {target:S.target, estMax:S.estMax, lastTestMax:S.lastTestMax};
+  rec.newTarget = null;
+  if(plan.type === 'test'){
+    const M = res.reps;
+    if(!S.startDate){
+      S.startDate = d; S.estMax = Math.max(1, M); S.lastTestMax = M;
+      S.target = clamp(2*M, 8, 100);
+      S.p = clamp(Math.pow(100/S.target, 1/60) - 1, 0.008, 0.04);
+    } else {
+      const prev = S.lastTestMax || M;
+      if(M >= prev*1.15) S.p = Math.min(0.05, S.p*1.1);
+      else if(M <= prev) S.p = Math.max(0.006, S.p*0.85);
+      S.estMax = M >= S.estMax ? M : Math.round((M + S.estMax)/2);
+      S.target = Math.min(100, Math.max(plan.base, 1.8*M));
+      S.lastTestMax = M;
+    }
+  } else if(plan.type === 'recovery'){
+    S.target = plan.base;
+  } else {
+    const base = plan.base;
+    if(!rec.completed){
+      S.target = Math.max(5, Math.min(base*0.92, (base + res.reps)/2));
+      addRecovery(S, tomorrow); S.hardStreak = 0;
+      rec.outcome = 'eased';
+    } else {
+      const hard = res.feel === 'hard' || res.breaks >= 2 || res.slowdown > 0.8;
+      const easy = res.feel === 'easy' && res.breaks === 0 && res.slowdown < 0.4;
+      if(hard){
+        S.target = base; S.hardStreak++;
+        rec.outcome = 'repeat';
+        if(S.hardStreak >= 2){ addRecovery(S, tomorrow); S.hardStreak = 0; rec.outcome = 'repeat+recovery'; }
+      } else {
+        let step = base * S.p * (easy ? 1.6 : 1) * (res.breaks === 1 ? 0.5 : 1);
+        step = clamp(step, 0.5, 6);
+        S.target = Math.min(100, base + step); if(S.target >= 99.5) S.target = 100;
+        S.hardStreak = 0;
+        if(easy) S.estMax += 1;
+        rec.outcome = base >= 100 ? 'hold' : 'up';
+      }
+    }
+    if(rec.completed && plan.total >= 100 && !S.reached100) S.reached100 = d;
+  }
+  S.estMax = Math.max(S.estMax, res.maxRun);
+  rec.newTarget = Math.round(S.target);
+  S.sessions.push(rec);
+  return {rec, before};
+}
+
+function dayOK(S,d){ return !!sessionOn(S,d) || dayType(S,d) === 'rest'; }
+function streak(S,today){
+  if(!S.startDate) return 0;
+  let d = dayOK(S,today) ? today : addDays(today,-1), n = 0;
+  while(dayDiff(S.startDate,d) >= 0 && dayOK(S,d)){ n++; d = addDays(d,-1); }
+  return n;
+}
+function bestStreak(S,today){
+  if(!S.startDate) return 0;
+  let best = 0, cur = 0;
+  for(let d = S.startDate; dayDiff(d,today) >= 0; d = addDays(d,1)){
+    if(dayOK(S,d)){ cur++; best = Math.max(best,cur); } else if(d !== today) cur = 0;
+  }
+  return best;
+}
+function projectDate(S,today){
+  if(!S.target || S.reached100) return null;
+  if(S.target >= 100) return today;
+  const n = clamp(Math.ceil(Math.log(100/S.target)/Math.log(1+S.p)), Math.ceil((100-S.target)/6), Math.ceil((100-S.target)/0.5));
+  return addDays(today, Math.ceil(n*7/4.5));
+}
+// LOGIC END
+
+/* ================= UI ================= */
+const KEY = 'noseTo100.v1';
+let S = load();
+function load(){ try{ const s = JSON.parse(localStorage.getItem(KEY)); if(s) return Object.assign(defaults(), s); }catch(e){} return defaults(); }
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+const $ = id => document.getElementById(id);
+const pick = a => a[Math.floor(Math.random()*a.length)];
+function fmtD(s, opts){ return new Date(parseD(s)).toLocaleDateString('en-GB', Object.assign({weekday:'short', day:'numeric', month:'short', timeZone:'UTC'}, opts||{})); }
+function show(id){ document.querySelectorAll('.screen').forEach(e => e.classList.toggle('on', e.id === id)); window.scrollTo(0,0); }
+const TYPE_LABEL = {train:'Training day', recovery:'Recovery day', test:'Max test', rest:'Rest day'};
+
+/* ---------- voice & sound ---------- */
+const SET_DONE = ['Strong set.','Nice work.',"That's how it's done.",'Solid.','Clean reps.','Good stuff.','Lovely.'];
+const FINALE = ['You showed up and did the work.','Another brick in the wall.','Proper effort. See you tomorrow.','Future you says thanks.','Done and dusted.','Every day, a bit stronger.'];
+const PUSH = ['Keep going!','Push!',"You've got more!","Don't stop now!",'Strong!','Keep it clean!'];
+const DIG = ['Dig in.','Stay strong.','Grind it out.','Chest down, keep going.','You can do this.'];
+let voiceObj = null, actx = null;
+function pickVoice(){
+  if(!('speechSynthesis' in window)) return;
+  const vs = speechSynthesis.getVoices();
+  voiceObj = vs.find(v => /en[-_]GB/i.test(v.lang) && /Daniel|Arthur|Male/i.test(v.name))
+          || vs.find(v => /en[-_]GB/i.test(v.lang)) || vs.find(v => /^en/i.test(v.lang)) || null;
+}
+if('speechSynthesis' in window){ pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+function say(text){
+  if(!S.voice || !('speechSynthesis' in window)){ beep(); return; }
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  if(voiceObj){ u.voice = voiceObj; u.lang = voiceObj.lang; } else u.lang = 'en-GB';
+  u.rate = 1.12;
+  speechSynthesis.speak(u);
+}
+function beep(){
+  try{
+    if(!actx) return;
+    const o = actx.createOscillator(), g = actx.createGain();
+    o.frequency.value = 880; g.gain.setValueAtTime(0.25, actx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 0.12);
+    o.connect(g); g.connect(actx.destination); o.start(); o.stop(actx.currentTime + 0.13);
+  }catch(e){}
+}
+function unlockAudio(){
+  try{ if(!actx){ const AC = window.AudioContext || window.webkitAudioContext; if(AC) actx = new AC(); } if(actx && actx.state === 'suspended') actx.resume(); }catch(e){}
+}
+
+/* ---------- screen wake ---------- */
+let wakeLock = null;
+async function keepAwake(){ try{ if('wakeLock' in navigator) wakeLock = await navigator.wakeLock.request('screen'); }catch(e){} }
+function letSleep(){ try{ if(wakeLock){ wakeLock.release(); wakeLock = null; } }catch(e){} }
+document.addEventListener('visibilitychange', () => { if(RUN && document.visibilityState === 'visible') keepAwake(); });
+
+/* ---------- intro ---------- */
+function renderIntro(){
+  $('s-intro').innerHTML = `
+    <h1>Nose to <b>100</b></h1>
+    <p style="margin-top:6px">Build up to 100 push-ups in one session, a little more each day.</p>
+    <div class="card">
+      <h2 style="margin-top:0">How it works</h2>
+      <ol class="steps">
+        <li><b>Phone flat on the floor, screen up,</b> where your nose lands at the bottom of a push-up.</li>
+        <li><b>Every nose touch is one rep.</b> A voice counts you through and tells you when to rest.</li>
+        <li><b>Stop for more than 5 seconds mid-set</b> and it counts as a break. The plan adjusts.</li>
+        <li><b>Rest days and lighter recovery days are built in.</b> Every 2 weeks there's a max test to check your progress.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <span class="badge b-test">First up</span>
+      <p style="margin-top:10px;color:var(--ink)"><b>A max test.</b> Do as many proper push-ups as you can in one go. When you stop for a few seconds, the test ends. Your plan is built from this number.</p>
+    </div>
+    <div class="warnbox"><b>Form check:</b> body straight like a plank, neck in line with your back. Lower your <b>chest</b> to the floor. Don't just dip your head to tap the screen.</div>
+    <button class="btn btn-main" onclick="openReady()">Set up for the test</button>`;
+}
+
+/* ---------- home ---------- */
+function planLine(p){
+  if(p.type === 'rest') return '';
+  if(p.type === 'test') return '<p style="margin-top:6px">As many as you can in one go.</p>';
+  return `<div class="sets">${p.sets.map(n => `<span>${n}</span>`).join('')}</div>
+          <p class="muted">${p.sets.length} set${p.sets.length>1?'s':''} · ${p.rest}s rest between</p>`;
+}
+function renderHome(){
+  const today = todayStr();
+  const done = sessionOn(S, today);
+  const tomorrow = addDays(today, 1);
+  const tp = makePlan(S, tomorrow, {decay:false});
+  const st = streak(S, today), best = bestStreak(S, today);
+  let todayHtml;
+  if(done){
+    const ok = done.type === 'test' ? true : done.completed;
+    todayHtml = `<span class="badge b-done">Done today ✓</span>
+      <div class="hero">${done.reps}<small>${done.type==='test' ? 'in your max test' : 'of ' + done.target}</small></div>
+      <p>${ok ? 'Nice one. Recover well.' : 'Not every day is a big one. The plan has eased off for you.'}</p>
+      <h2>Tomorrow · ${fmtD(tomorrow)}</h2>
+      <span class="badge b-${tp.type}">${TYPE_LABEL[tp.type]}</span>
+      ${tp.type==='rest' ? '<p style="margin-top:8px">No push-ups. Muscles grow while you rest.</p>' : tp.type==='test' ? planLine(tp) : `<div class="hero" style="font-size:44px">${tp.total}<small>reps</small></div>${planLine(tp)}`}`;
+  } else {
+    const p = makePlan(S, today);
+    if(p.type === 'rest'){
+      todayHtml = `<span class="badge b-rest">Rest day</span>
+        <div class="hero" style="font-size:48px">Rest</div>
+        <p>No push-ups today. Muscles grow while you recover. Your streak stays safe.</p>
+        <h2>Tomorrow · ${fmtD(tomorrow)}</h2>
+        <span class="badge b-${tp.type}">${TYPE_LABEL[tp.type]}</span>
+        ${tp.type==='test' ? planLine(tp) : `<div class="hero" style="font-size:44px">${tp.total}<small>reps</small></div>${planLine(tp)}`}`;
+    } else if(p.type === 'test'){
+      todayHtml = `<span class="badge b-test">Max test</span>
+        <div class="hero" style="font-size:48px">Max test</div>
+        <p>Two weeks done. As many proper push-ups as you can in one go. Last time: <b style="color:var(--ink)">${S.lastTestMax}</b>.</p>
+        <button class="btn btn-main" onclick="openReady()">Start</button>`;
+    } else {
+      const missed = missedDays(S, today);
+      todayHtml = `<span class="badge b-${p.type}">${TYPE_LABEL[p.type]}</span>
+        <div class="hero">${p.total}<small>push-ups</small></div>
+        ${planLine(p)}
+        ${p.type==='recovery' ? '<p style="margin-top:8px">A lighter day so you come back stronger.</p>' : ''}
+        ${missed>=2 ? `<p class="notok" style="margin-top:8px">You've missed ${missed} sessions, so today's target is a bit lower to ease you back in.</p>` : ''}
+        <button class="btn btn-main" onclick="openReady()">Start</button>`;
+    }
+  }
+  const total = S.sessions.reduce((a,s) => a + s.reps, 0);
+  const proj = projectDate(S, today);
+  $('s-home').innerHTML = `
+    <div class="top"><h1>Nose to <b>100</b></h1><span class="chip">🔥 ${st} day${st===1?'':'s'}</span></div>
+    ${S.reached100 ? `<div class="warnbox" style="background:#10261a;border-color:#1d4a30;color:#b6f0cb">🏆 You hit 100 on ${fmtD(S.reached100)}. Now keep it, and do it in fewer sets.</div>` : ''}
+    <div class="card">${todayHtml}</div>
+    <h2>Progress · last 4 weeks</h2>
+    <div class="card" style="margin-top:0">${chartSVG(today)}</div>
+    <div class="tiles">
+      <div class="tile"><div class="k">Current target</div><div class="v">${Math.round(S.target)}</div></div>
+      <div class="tile"><div class="k">Max test</div><div class="v">${S.lastTestMax ?? '–'}</div></div>
+      <div class="tile"><div class="k">Streak (best)</div><div class="v">${st} <span class="muted">(${best})</span></div></div>
+      <div class="tile"><div class="k">${S.reached100 ? 'Total push-ups' : '100 by (at this pace)'}</div><div class="v" style="font-size:${S.reached100?24:19}px">${S.reached100 ? total.toLocaleString('en-GB') : (proj ? fmtD(proj,{weekday:undefined}) : '–')}</div></div>
+    </div>
+    ${S.reached100 ? '' : `<p class="muted" style="margin-top:10px">${total.toLocaleString('en-GB')} push-ups done so far. The finish date moves as you train: easy sessions pull it closer.</p>`}
+    <h2>Settings</h2>
+    <div class="card" style="margin-top:0;padding:4px 18px">
+      <div class="row"><div><b>Voice coach</b><div class="muted">Counts reps and keeps you going</div></div><button class="switch ${S.voice?'on':''}" onclick="toggleVoice()" aria-label="Voice coach"></button></div>
+      <div class="row"><div><b>Test the voice</b><div class="muted">No sound on iPhone? Check the silent switch.</div></div><button class="link" onclick="unlockAudio();say('One. Two. Three. Looking strong.')">Play</button></div>
+      <div class="row"><div><b>Start again</b><div class="muted">Wipes all your history</div></div><button class="link danger" onclick="resetAll()">Reset</button></div>
+    </div>
+    <p class="muted" style="margin-top:14px">Your data is saved on this phone only. If you added the app to your home screen, always open it from there.</p>`;
+  wireChart();
+}
+function toggleVoice(){ S.voice = !S.voice; save(); renderHome(); }
+function resetAll(){
+  if(confirm('Wipe everything and start again with a new max test?')){ const v = S.voice; S = defaults(); S.voice = v; save(); route(); }
+}
+
+/* ---------- chart ---------- */
+let chartData = [];
+function chartSVG(today){
+  const N = 28, W = 340, H = 170, L = 28, R = 6, T = 10, B = 22;
+  const days = Array.from({length:N}, (_,i) => addDays(today, i-(N-1)));
+  chartData = days.map(d => { const s = sessionOn(S,d); return {d, s, type: S.startDate && dayDiff(S.startDate,d) >= 0 ? dayType(S,d) : null}; });
+  const m = Math.max(10, ...chartData.map(x => x.s ? Math.max(x.s.reps, x.s.target||0) : 0));
+  const step = [5,10,20,25,50].find(s => Math.ceil(m*1.1/s) <= 4) || 50;
+  const yMax = Math.ceil(m*1.1/step)*step;
+  const pw = W-L-R, ph = H-T-B, slot = pw/N, bw = Math.max(2, slot-2);
+  const y = v => T + ph - v/yMax*ph;
+  let g = '';
+  for(let v = 0; v <= yMax; v += step){
+    g += `<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="#262a31" stroke-width="1"/>
+          <text x="${L-6}" y="${y(v)+3.5}" text-anchor="end" font-size="10" fill="#6b7280">${v}</text>`;
+  }
+  if(yMax >= 100) g += `<line x1="${L}" x2="${W-R}" y1="${y(100)}" y2="${y(100)}" stroke="#ff7a1a" stroke-width="1" stroke-dasharray="4 4" opacity=".6"/><text x="${W-R}" y="${y(100)-4}" text-anchor="end" font-size="10" fill="#a3a9b3">Goal 100</text>`;
+  let bars = '', hits = '';
+  chartData.forEach((x,i) => {
+    const cx = L + i*slot + slot/2, x0 = cx - bw/2;
+    if(x.s && x.s.reps > 0){
+      const top = y(x.s.reps), h = T+ph-top, r = Math.min(4, bw/2, h);
+      bars += `<path d="M${x0},${T+ph} V${top+r} Q${x0},${top} ${x0+r},${top} H${x0+bw-r} Q${x0+bw},${top} ${x0+bw},${top+r} V${T+ph} Z" fill="${x.s.type==='test' ? '#f2b33d' : '#ff7a1a'}"/>`;
+      if(x.s.target) bars += `<line x1="${x0-1}" x2="${x0+bw+1}" y1="${y(x.s.target)}" y2="${y(x.s.target)}" stroke="#f3f4f6" stroke-width="2"/>`;
+    } else if(x.type === 'rest'){
+      bars += `<circle cx="${cx}" cy="${T+ph-3}" r="1.6" fill="#6b7280"/>`;
+    }
+    hits += `<rect data-i="${i}" x="${L+i*slot}" y="${T}" width="${slot}" height="${ph+B}" fill="transparent"/>`;
+    if(i === N-1 || (N-1-i) % 7 === 0){
+      bars += `<text x="${cx}" y="${H-6}" text-anchor="${i===N-1?'end':'middle'}" font-size="10" fill="#6b7280">${i===N-1 ? 'Today' : fmtD(x.d,{weekday:undefined})}</text>`;
+    }
+  });
+  return `<div class="chartwrap" id="chartwrap"><div class="tip" id="tip"></div>
+    <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Push-ups per day, last 4 weeks">${g}${bars}${hits}</svg></div>
+    <div class="legend"><span><i style="width:10px;height:10px;border-radius:2px;background:#ff7a1a"></i>Reps done</span><span><i style="width:12px;height:2px;background:#f3f4f6"></i>Target</span><span><i style="width:10px;height:10px;border-radius:2px;background:#f2b33d"></i>Max test</span></div>
+    <p class="muted" style="margin-top:6px">Tap a bar for details.</p>`;
+}
+function wireChart(){
+  const wrap = $('chartwrap'); if(!wrap) return;
+  const tip = $('tip');
+  wrap.querySelectorAll('rect[data-i]').forEach(r => r.addEventListener('pointerdown', e => {
+    const x = chartData[+r.dataset.i];
+    let t = fmtD(x.d) + ' · ';
+    if(x.s) t += x.s.type === 'test' ? `Max test: ${x.s.reps}` : `${x.s.reps} reps (target ${x.s.target})${x.s.breaks ? ' · ' + x.s.breaks + ' break' + (x.s.breaks>1?'s':'') : ''}`;
+    else t += x.type === 'rest' ? 'Rest day' : x.type ? 'No session' : 'Before you started';
+    tip.textContent = t; tip.style.display = 'block';
+    const wb = wrap.getBoundingClientRect(), rb = r.getBoundingClientRect();
+    const cx = rb.left - wb.left + rb.width/2;
+    const half = tip.offsetWidth/2;
+    tip.style.left = clamp(cx, half, wb.width - half) + 'px';
+    clearTimeout(wireChart.t); wireChart.t = setTimeout(() => tip.style.display = 'none', 3000);
+  }));
+}
+
+/* ---------- ready screen ---------- */
+function openReady(){
+  const p = makePlan(S, todayStr());
+  const isTest = p.type === 'test';
+  $('s-ready').innerHTML = `
+    <div class="top"><button class="link" onclick="route()">← Back</button><span class="badge b-${p.type}">${TYPE_LABEL[p.type]}</span></div>
+    <div class="card">
+      <h2 style="margin-top:0">${isTest ? 'Max test' : 'Today: ' + p.total + ' push-ups'}</h2>
+      ${isTest ? '<p>As many as you can in one go. Short pauses at the top are fine, but stop for about 7 seconds and the test ends.</p>' : planLine(p)}
+      <ol class="steps" style="margin-top:12px">
+        <li><b>Volume up.</b> On iPhone, also turn off silent mode.</li>
+        <li><b>Phone flat on the floor, screen up,</b> under your face.</li>
+        <li><b>Your first nose touch starts the count.</b> No need to look.</li>
+        <li><b>To stop early,</b> hold “Hold: finish” at the top. ${isTest ? '' : 'The session also ends by itself 10s after your last rep once you hit the target.'}</li>
+      </ol>
+    </div>
+    <div class="warnbox">Lower your chest, not just your head. A straight body and neck makes every rep count.</div>
+    <button class="btn btn-main" onclick="startSession()">I'm ready, go</button>`;
+  show('s-ready');
+}
+
+/* ---------- session ---------- */
+let RUN = null;
+function startSession(){
+  unlockAudio(); keepAwake();
+  const plan = makePlan(S, todayStr());
+  RUN = {plan, times:[], restUntil:null, restWarned:false, breatherSaid:false, endWarned:false, dug:{}};
+  show('s-session');
+  if(plan.type === 'test') say('Max test. As many as you can. Go when ready.');
+  else say(`Let's go. Set one, ${plan.sets[0]} reps.`);
+  renderSession();
+  RUN.timer = setInterval(tick, 250);
+}
+function onRep(e){
+  if(!RUN) return;
+  if(e) e.preventDefault();
+  const now = performance.now(), t = RUN.times;
+  if(t.length && now - t[t.length-1] < MIN_REP_MS) return;
+  const before = replay(RUN.plan, t);
+  t.push(now);
+  const after = replay(RUN.plan, t);
+  RUN.restUntil = null; RUN.breatherSaid = false; RUN.endWarned = false;
+  if(navigator.vibrate) navigator.vibrate(25);
+  speakRep(before, after, now);
+  const bn = $('bignum'); bn.classList.add('pop'); setTimeout(() => bn.classList.remove('pop'), 90);
+  renderSession();
+}
+function speakRep(b, a, now){
+  const P = RUN.plan;
+  if(P.type === 'test'){
+    const n = a.total; let s = String(n);
+    if(S.lastTestMax && n === S.lastTestMax + 1) s += '. New personal best!';
+    else if(n % 10 === 0) s += '. ' + pick(PUSH);
+    say(s); return;
+  }
+  if(b.done){ say(String(a.total) + (a.bonus === 1 ? '. Bonus reps!' : '')); return; }
+  const setTarget = P.sets[b.setIdx];
+  const finishedSet = a.setIdx > b.setIdx;
+  const n = finishedSet ? setTarget : a.inSet;
+  let s = String(n);
+  if(finishedSet){
+    if(a.done) s += '. Target done! ' + pick(FINALE);
+    else { s += '. Set done. ' + pick(SET_DONE) + ` Rest ${P.rest} seconds.`; RUN.restUntil = now + P.rest*1000; RUN.restWarned = false; }
+  } else {
+    const rem = setTarget - n;
+    if(rem === 1) s += '. Last one!';
+    else if(rem === 2 && setTarget >= 5) s += '. Two more!';
+    else if(rem === 3 && setTarget >= 8) s += '. Three more.';
+    else if(n === Math.ceil(setTarget/2) && setTarget >= 10) s += '. Halfway.';
+    else {
+      const ts = a.setTimes[a.setIdx];
+      if(ts.length >= 5 && !RUN.dug[a.setIdx]){
+        const first = (ts[3]-ts[0])/3, last = ts[ts.length-1]-ts[ts.length-2];
+        if(last <= BREAK_MS && last > first*1.8){ s += '. ' + pick(DIG); RUN.dug[a.setIdx] = true; }
+      }
+    }
+  }
+  say(s);
+}
+function tick(){
+  if(!RUN) return;
+  const now = performance.now(), P = RUN.plan, t = RUN.times, a = replay(P, t), last = t[t.length-1];
+  if(RUN.restUntil){
+    const left = Math.ceil((RUN.restUntil - now)/1000);
+    if(left <= 10 && !RUN.restWarned){ RUN.restWarned = true; say('Ten seconds.'); }
+    if(left <= 0){ RUN.restUntil = null; say(`Back down. Set ${a.setIdx+1}, ${P.sets[a.setIdx]} reps.`); }
+  } else if(P.type === 'test'){
+    if(t.length){
+      const idle = now - last;
+      if(idle > 3000 && !RUN.endWarned){ RUN.endWarned = true; say('Got any more in you?'); }
+      if(idle > TEST_END_MS){ finishSession(); return; }
+    }
+  } else if(a.done){
+    if(now - last > AUTO_FINISH_MS){ finishSession(); return; }
+  } else if(a.inSet > 0 && now - last > BREAK_MS && !RUN.breatherSaid){
+    RUN.breatherSaid = true; say("Take a breather. Get back down when you're ready.");
+  }
+  renderSession();
+}
+function renderSession(){
+  const P = RUN.plan, t = RUN.times, a = replay(P, t), now = performance.now(), last = t[t.length-1];
+  const sc = $('scenter');
+  let label, big, of, status = '';
+  if(P.type === 'test'){
+    label = 'Max test'; big = a.total;
+    of = S.lastTestMax ? `Best so far: ${Math.max(S.lastTestMax, a.total)}` : 'As many as you can';
+    if(t.length && now - last > 3000) status = `Ending in ${Math.max(0, Math.ceil((TEST_END_MS - (now-last))/1000))}…`;
+    else if(!t.length) status = 'First nose touch starts the test';
+  } else if(a.done){
+    label = 'Target done ✓'; big = a.total;
+    of = a.bonus ? `incl. ${a.bonus} bonus` : `Keep going for bonus reps`;
+    status = `<span style="color:var(--good)">Finishing in ${Math.max(0, Math.ceil((AUTO_FINISH_MS - (now-last))/1000))}s… or hold “finish”</span>`;
+  } else {
+    label = `Set ${a.setIdx+1} of ${P.sets.length}`; big = a.inSet;
+    of = `of ${P.sets[a.setIdx]} · total ${a.total}/${P.total}`;
+    if(!t.length) status = 'First nose touch starts the count';
+    else if(a.inSet > 0 && now - last > BREAK_MS) status = 'Breather: this counts as an extra break';
+    if(a.breaks && !status) status = `<span style="color:var(--muted);font-size:15px">${a.breaks} extra break${a.breaks>1?'s':''} so far</span>`;
+  }
+  const resting = !!RUN.restUntil;
+  sc.classList.toggle('resting', resting);
+  if(resting){
+    $('rt').textContent = Math.max(0, Math.ceil((RUN.restUntil - now)/1000));
+    $('restnext').textContent = `Next: ${P.sets[a.setIdx]} reps. Start early if you're ready.`;
+    status = '';
+  }
+  $('slabel').textContent = label;
+  $('bignum').textContent = big;
+  $('ofline').textContent = of;
+  $('status').innerHTML = status;
+  if(P.type === 'test'){ $('dots').innerHTML = ''; }
+  else $('dots').innerHTML = P.sets.map((n,i) => {
+    const f = i < a.setIdx ? 1 : i === a.setIdx ? a.inSet/n : 0;
+    return `<div><i style="width:${Math.round(f*100)}%"></i></div>`;
+  }).join('');
+}
+function undoRep(){
+  if(!RUN || !RUN.times.length) return;
+  RUN.times.pop(); RUN.restUntil = null; say('Minus one.'); renderSession();
+}
+function finishSession(){
+  if(!RUN) return;
+  clearInterval(RUN.timer); letSleep();
+  const P = RUN.plan, t = RUN.times, a = replay(P, t);
+  RUN = null;
+  if(!t.length){ route(); return; }
+  const res = {reps:a.total, breaks:a.breaks, slowdown:slowdownOf(a.setTimes), maxRun:a.maxRun};
+  if(P.type === 'test'){
+    say(`${a.total}. ` + (S.lastTestMax != null && a.total > S.lastTestMax ? 'New personal best! ' : '') + 'Test done.');
+    const out = applySession(S, P, res); save(); renderOutcome(P, out); return;
+  }
+  const completed = a.total >= P.total;
+  if(P.type === 'train' && completed){
+    S.pending = {plan:P, res}; save(); renderFeel(P, res);
+  } else {
+    if(!completed) say(`${a.total} done. No stress, the plan will ease off.`);
+    const out = applySession(S, P, res); save(); renderOutcome(P, out);
+  }
+}
+
+/* ---------- results ---------- */
+function statLines(P, r){
+  const slow = Math.round(r.slowdown*100);
+  return `<div class="stat-lines">
+    <div><span>Push-ups</span><b>${r.reps}${P.total ? ' / ' + P.total : ''}</b></div>
+    ${P.type==='test' ? '' : `<div><span>Planned sets</span><b>${P.sets.length}</b></div>
+    <div><span>Extra breaks</span><b class="${r.breaks?'notok':'ok'}">${r.breaks}</b></div>
+    <div><span>Slowed down by end of sets</span><b class="${slow>60?'notok':'ok'}">${slow ? slow + '%' : 'no'}</b></div>`}
+    <div><span>Longest unbroken run</span><b>${r.maxRun}</b></div>
+  </div>`;
+}
+function renderFeel(P, res){
+  $('s-result').innerHTML = `
+    <span class="badge b-done">Target done ✓</span>
+    <div class="hero">${res.reps}<small>push-ups</small></div>
+    <div class="card">${statLines(P,res)}</div>
+    <h2>How did that feel?</h2>
+    <div class="feel">
+      <button onclick="pickFeel('easy')">😎 Easy<small>had more in me</small></button>
+      <button onclick="pickFeel('ok')">👍 About right<small>tough but fine</small></button>
+      <button onclick="pickFeel('hard')">🥵 Hard<small>barely made it</small></button>
+    </div>
+    <p class="muted" style="margin-top:10px">Be honest. This and your timing data decide tomorrow's target.</p>`;
+  show('s-result');
+}
+function pickFeel(f){
+  const pd = S.pending; if(!pd) return route();
+  S.pending = null;
+  const out = applySession(S, pd.plan, Object.assign({}, pd.res, {feel:f}));
+  save(); renderOutcome(pd.plan, out);
+}
+function renderOutcome(P, out){
+  const {rec, before} = out;
+  const tomorrow = addDays(P.date, 1), tp = makePlan(S, tomorrow, {decay:false});
+  let head, msg;
+  if(P.type === 'test'){
+    head = `Max: ${rec.reps}`;
+    if(before.lastTestMax == null){
+      msg = `Your starting target is <b>${Math.round(S.target)} push-ups</b> in one session, split into sets. It grows about ${(S.p*100).toFixed(1)}% each training day, and faster if it feels easy.` +
+            (rec.reps < 5 ? `<br><br>Tip: if full push-ups are a struggle, do them from your knees for now. Same nose touch, same counting.` : '');
+    } else {
+      const diff = rec.reps - before.lastTestMax;
+      msg = `${diff > 0 ? `Up ${diff} on last time (${before.lastTestMax}). Great progress.` : diff === 0 ? `Same as last time (${before.lastTestMax}). The plan slows down a little to let you catch up.` : `Down from ${before.lastTestMax}. Could just be an off day. The plan slows down a little.`}<br>Target is now <b>${Math.round(S.target)}</b>.`;
+    }
+  } else if(P.type === 'recovery'){
+    head = rec.completed ? 'Recovery done' : `${rec.reps} of ${rec.target}`;
+    msg = `Easy days are part of getting stronger. Main target stays at <b>${Math.round(S.target)}</b>.`;
+  } else if(!rec.completed){
+    head = `${rec.reps} of ${rec.target}`;
+    msg = `No stress, that's useful info. Target eased to <b>${Math.round(S.target)}</b>${tp.type==='recovery' ? ' and tomorrow is a lighter recovery day' : ''}.`;
+  } else {
+    head = 'Session done';
+    if(rec.outcome === 'up') msg = rec.newTarget > rec.target ? `Target goes up to <b>${rec.newTarget}</b> (+${rec.newTarget - rec.target}).` : `Target is creeping up: still <b>${rec.newTarget}</b> next time, going up soon.`;
+    else if(rec.outcome === 'hold') msg = `You're at 100. Keep it up, and watch the sets drop as you get stronger.`;
+    else if(rec.outcome === 'repeat+recovery') msg = `Two tough ones in a row, so tomorrow is a <b>recovery day</b>. Target stays at <b>${Math.round(S.target)}</b>.`;
+    else msg = `That was a grind${rec.breaks>=2 ? ' with extra breaks' : ''}, so the target stays at <b>${Math.round(S.target)}</b>. Own it first, then we go up.`;
+  }
+  if(S.reached100 === P.date) { head = '🏆 100!'; msg = 'You did 100 push-ups in one session. Proper achievement. Keep the habit going and the sets will shrink.'; }
+  const tline = tp.type === 'rest' ? 'Rest day' : tp.type === 'test' ? 'Max test' : `${TYPE_LABEL[tp.type]} · ${tp.total} push-ups`;
+  $('s-result').innerHTML = `
+    <span class="badge b-${rec.completed?'done':'test'}">${TYPE_LABEL[P.type]}</span>
+    <div class="hero" style="font-size:52px">${head}</div>
+    <div class="card"><p style="color:var(--ink)">${msg}</p></div>
+    <div class="card">${statLines(P, rec)}</div>
+    <h2>Tomorrow · ${fmtD(tomorrow)}</h2>
+    <div class="card" style="margin-top:0"><b>${tline}</b>${tp.type==='train'||tp.type==='recovery' ? planLine(tp) : ''}</div>
+    <button class="btn btn-main" onclick="route()">Done</button>`;
+  show('s-result');
+}
+
+/* ---------- routing ---------- */
+function route(){
+  const today = todayStr();
+  if(S.pending){
+    if(S.pending.plan.date === today){ renderFeel(S.pending.plan, S.pending.res); return; }
+    const pd = S.pending; S.pending = null; applySession(S, pd.plan, pd.res); save();
+  }
+  if(!S.startDate){ renderIntro(); show('s-intro'); return; }
+  renderHome(); show('s-home');
+}
+
+/* ---------- wire up session controls ---------- */
+(function(){
+  const zone = $('s-session');
+  zone.addEventListener('pointerdown', onRep);
+  zone.addEventListener('contextmenu', e => e.preventDefault());
+  zone.addEventListener('touchmove', e => e.preventDefault(), {passive:false});
+  function hold(el, fn){
+    let tm = null;
+    const start = e => { e.stopPropagation(); e.preventDefault(); el.classList.add('holding'); tm = setTimeout(() => { el.classList.remove('holding'); tm = null; fn(); }, 800); };
+    const end = e => { e.stopPropagation(); if(tm){ clearTimeout(tm); tm = null; } el.classList.remove('holding'); };
+    el.addEventListener('pointerdown', start);
+    ['pointerup','pointerleave','pointercancel'].forEach(ev => el.addEventListener(ev, end));
+  }
+  hold($('h-undo'), undoRep);
+  hold($('h-end'), finishSession);
+})();
+route();
+</script>
+</body>
+</html>
